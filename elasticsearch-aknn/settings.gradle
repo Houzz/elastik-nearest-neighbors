@@ -1,1 +1,11 @@
 rootProject.name = 'elasticsearch-aknn'
+
+List<String> subprojectNames = List.of(
+        'plugin'
+)
+
+subprojectNames.forEach {
+    String fullName ="${rootProject.name}-$it"
+    include fullName
+    project(":$fullName").setName(it)
+}
